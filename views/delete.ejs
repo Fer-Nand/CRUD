@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Eliminar</title>
+    <%- include("partials/head") %>
+  </head>
+  <body>
+    <%- include("partials/navigation") %>
+    <div class="container p-4">
+      <div class="row">
+        <div class="col-md-4 offset-md-4">
+          <div class="card animated fadeInDown">
+              <div class="card-body">
+                  <h6 class="card-title">Nombre</h6>
+                  <p class="card-text"><%= usuario.nombre %></p>
+                  <h6 class="card-title">Email</h6>
+                  <p class="card-text"><%= usuario.email %></p>
+                  <h6 class="card-title">Teléfono</h6>
+                  <p class="card-text"><%= usuario.telefono %></p>
+                  <h6 class="card-title">Estado civil</h6>
+                  <p class="card-text"><%= usuario.estado %></p>
+                  <h6 class="card-title">Hijo</h6>
+                  <p class="card-text"><%= usuario.hijos %></p>
+                  <h6 class="card-title">Intereses</h6>
+                  <%if(usuario.libros == "libros"){%>
+                   *<%= usuario.libros %>
+                   <%} %>
+                   <%if(usuario.musica == "musica"){%>
+                   *<%= usuario.musica%>
+                   <%} %>
+                   <%if(usuario.deportes == "deportes"){%>
+                   *<%= usuario.deportes %>
+                   <%} %>
+                   <%if(usuario.otros == "otros"){%>
+                   *<%= usuario.otros %>
+                   <%} %>
+                   <br/>
+                   <br/>
+                  <a href="/usuario/<%= usuario._id%>/delete " class="btn btn-danger">Eliminar</a>
+                  <a href="/usuarioedit/<%= usuario._id %>" class="btn btn-success">Editar</a>
+              </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

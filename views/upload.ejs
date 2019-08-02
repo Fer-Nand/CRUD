@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=+, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Agregar</title>
+    <%- include("partials/head") %>
+  </head>
+  <body>
+    <%- include("partials/navigation") %>
+    <div class="container p-4">
+      <div class="row">
+        <div class="col-md-4 offset-md-4">
+          <div class="card">
+            <div class="card-body">
+              <form action="/upload" method="POST">
+                <div class="form-group">
+                  <p align="center">Nuevo Registro</p>
+                </div>
+                <div class="form-group">
+                    <p>Nombre</p>
+                    <input type="text" name="nombre" placeholder="Nombre" class="form-control"/>
+                </div>
+                <div class="form-group">
+                    <p>Email</p>
+                    <input type="email" name="email" placeholder="Email" class="form-control"/>
+                </div> 
+                <div class="form-group">
+                    <p>Teléfono</p>
+                    <input type="tel" name="telefono" placeholder="Telefono" class="form-control"/>
+                </div> 
+                <div class="form-group">
+                    <p>Estado civil</p>
+                    <select class="form-control" name="estado" >
+                        <option value="Soltero" Selected="selected">Soltero</option>
+                        <option value="Casado">Casado</option>
+                        <option value="Divorciado">Divorciado</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <p>¿Tienes hijos?</p>
+                    <input type="radio" name="hijos" value="SI" checked="true"> SI</input/>                 
+                    <input type="radio" name="hijos" value="NO"> NO</input/> 
+                </div>    
+                <div class="form-group">
+                    <p>Intereses</p>
+                    <input type="checkbox" name="libros" value="libros"> Libros</input/>
+                    <input type="checkbox" name="musica" value="musica"> Música</input/>
+                    <input type="checkbox" name="deportes" value="deportes"> Deportes</input/> 
+                    <input type="checkbox" name="otros" value="otros"> Otros</input/>
+                </div>     
+                <div class="form-group">
+                    <button type="submit" class="btn btn-success btn-block">
+                       Guardar
+                    </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

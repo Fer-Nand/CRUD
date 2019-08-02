@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Editar</title>
+    <%- include("partials/head") %>
+  </head>
+  <body>
+    <%- include("partials/navigation") %>
+    <div class="container p-4">
+      <div class="row">
+        <div class="col-md-4 offset-md-4">
+            <div class="card animated fadeInDown">
+                <div class="card-body">
+                  <form action="/usuario/<%= usuario._id %>/edit" method="POST">
+                    <input type="hidden" name="id" value="<%= usuario._id %>" class="form-control"/>
+                    <div class="form-group">
+                        <p>Nombre</p>
+                        <input type="text" name="nombre" placeholder="Nombre" value="<%= usuario.nombre %>" class="form-control"/>
+                    </div>
+                    <div class="form-group">
+                        <p>Email</p>
+                        <input type="email" name="email" placeholder="Email" value="<%= usuario.email %>" class="form-control"/>
+                    </div>  
+                    <div class="form-group">
+                        <p>Teléfono</p>
+                        <input type="tel" name="telefono" placeholder="Telefono" value="<%= usuario.telefono %>" class="form-control"/>
+                    </div> 
+                    <div class="form-group">
+                        <p>Estado civil</p>
+                        <select class="form-control" name="estado" >
+                            <option value="Soltero" <% if(usuario.estado=='Soltero') { %> Selected="selected" <% } %> >Soltero</option>
+                            <option value="Casado" <% if(usuario.estado=='Casado') { %> Selected="selected" <% } %>>Casado</option>
+                            <option value="Divorciado" <% if(usuario.estado=='Divorciado') { %> Selected="selected" <% } %>>Divorciado</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <p>¿Tienes hijos?</p>
+                        <input type="radio" name="hijos" value="SI" <% if(usuario.hijos=='SI') {%> checked="true" <% } %>> SI<br>
+                        <input type="radio" name="hijos" value="NO" <% if(usuario.hijos=='NO') {%> checked="true" <% } %>> NO<br>
+                    </div>    
+                    <div class="form-group">
+                        <p>Intereses</p>
+                        <input type="checkbox" name="libros" value="libros" <% if(usuario.libros=='libros') {%> checked="true" <% } %>> Libros</input/>
+                        <input type="checkbox" name="musica" value="musica" <% if(usuario.musica=='musica') {%> checked="true" <% } %>> Música</input/>
+                        <input type="checkbox" name="deportes" value="deportes" <% if(usuario.deportes=='deportes') {%> checked="true" <% } %>> Deportes</input/> 
+                        <input type="checkbox" name="otros" value="otros" <% if(usuario.otros=='otros') {%> checked="true" <% } %>> Otros</input/>
+                    </div>   
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-success btn-block">
+                           Editar
+                        </button>
+                    </div>
+                  </form>
+              </div>
+            </div>              
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+ 
