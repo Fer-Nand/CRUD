@@ -1,9 +1,6 @@
 const express = require('express');
 const path = require('path');
 const morgan = require('morgan');
-const multer = require('multer');
-const uuid = require('uuid/v4');
-const { format } = require('timeago.js');
 
 //Initializations
 const app = express();
