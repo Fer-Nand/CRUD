@@ -3,8 +3,17 @@ const path = require('path');
 const morgan = require('morgan');
 
 //Initializations
-const app = express();
-require('./database');  
+onst app = express();
+var database = require('./database');  
+require('./config/passport');
+
+mongoose.connect(process.env.CUSTOMCONNSTR_MyConnectionString || database.localUrl, {
+  useNewUrlParser: true
+})
+.then(db => console.log('DB is connected'))
+.catch(err => console.log(err));
+
+mongoose.set('useFindAndModify', false);  
 
 //Settings
 app.set('port', process.env.PORT || 3000);
