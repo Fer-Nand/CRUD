@@ -6,7 +6,6 @@ var mongoose = require('mongoose');
 //Initializations
 const app = express();
 var database = require('./database');  
-require('./config/passport');
 
 mongoose.connect(process.env.CUSTOMCONNSTR_MyConnectionString || database.localUrl, {
   useNewUrlParser: true
