@@ -4,7 +4,7 @@ const morgan = require('morgan');
 var mongoose = require('mongoose'); 
 
 //Initializations
-onst app = express();
+const app = express();
 var database = require('./database');  
 require('./config/passport');
 
