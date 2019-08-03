@@ -51,7 +51,8 @@ router.get('/usuario/:id', async ( req, res) => {
 });
 router.get('/usuario/:id/delete', async (req, res) => {
     const {id} = req.params;
-    await Usuario.findByIdAndDelete(id);
+    const usuario = await Usuario.findById(id);
+    usuario.remove();
     res.redirect('/');
 });
 router.get('/usuarioedit/:id', async ( req, res) => {
